@@ -82,7 +82,7 @@ export default function TaskRouter() {
 
   const handleNext = () => {
     if (stepNum < 5) {
-      navigate(`/grade8/while/${stepNum + 1}`);
+      navigate(`/grade8/for-practice/${stepNum + 1}`);
     } else {
       navigate("/grade8/topics");
     }
@@ -90,11 +90,10 @@ export default function TaskRouter() {
 
   const handlePrevious = () => {
     if (stepNum > 1) {
-      navigate(`/grade8/while/${stepNum - 1}`);
+      navigate(`/grade8/for-practice/${stepNum - 1}`);
     }
   };
 
-  // ✅ Popup ашылғанда тек соны көрсетеміз
   if (showPopup) {
     return (
       <EndPopup

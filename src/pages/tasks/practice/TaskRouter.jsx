@@ -16,7 +16,7 @@ const taskPoints = {
   5: 2,
 };
 
-export default function TaskRouter() {
+export default function ForPracticeRouter() {
   const { step } = useParams();
   const stepNum = parseInt(step);
   const navigate = useNavigate();
@@ -82,19 +82,18 @@ export default function TaskRouter() {
 
   const handleNext = () => {
     if (stepNum < 5) {
-      navigate(`/grade8/while/${stepNum + 1}`);
+      navigate(`/grade8/general-practice/${stepNum + 1}`);
     } else {
-      navigate("/grade8/topics");
+      setShowPopup(true);
     }
   };
 
   const handlePrevious = () => {
     if (stepNum > 1) {
-      navigate(`/grade8/while/${stepNum - 1}`);
+      navigate(`/grade8/general-practice/${stepNum - 1}`);
     }
   };
 
-  // ✅ Popup ашылғанда тек соны көрсетеміз
   if (showPopup) {
     return (
       <EndPopup

@@ -82,7 +82,7 @@ export default function TaskRouter() {
 
   const handleNext = () => {
     if (stepNum < 5) {
-      navigate(`/grade8/while/${stepNum + 1}`);
+      navigate(`/grade8/while-practice/${stepNum + 1}`);
     } else {
       navigate("/grade8/topics");
     }
@@ -90,11 +90,10 @@ export default function TaskRouter() {
 
   const handlePrevious = () => {
     if (stepNum > 1) {
-      navigate(`/grade8/while/${stepNum - 1}`);
+      navigate(`/grade8/while-practice/${stepNum - 1}`);
     }
   };
 
-  // ✅ Popup ашылғанда тек соны көрсетеміз
   if (showPopup) {
     return (
       <EndPopup
@@ -131,15 +130,6 @@ export default function TaskRouter() {
               fontSize: "1rem",
               border: "2px solid #FFD700",
               cursor: "pointer",
-              transition: "0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#FFD700";
-              e.currentTarget.style.color = "#000";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.color = "#FFD700";
             }}
           >
             ⬅️ Алдыңғы тапсырма
@@ -158,7 +148,6 @@ export default function TaskRouter() {
               border: "none",
               cursor: "pointer",
               boxShadow: "0 0 10px rgba(255,215,0,0.5)",
-              transition: "0.2s",
             }}
           >
             ➡️ Келесі тапсырма

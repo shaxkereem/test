@@ -3,17 +3,13 @@ import { useEffect, useState } from "react";
 import Task1 from "./Task1";
 import Task2 from "./Task2";
 import Task3 from "./Task3";
-import Task4 from "./Task4";
-import Task5 from "./Task5";
 import useTimer from "../../../hooks/useTimer";
 import EndPopup from "./EndPopup";
 
 const taskPoints = {
-  1: 1,
-  2: 2,
-  3: 2,
-  4: 3,
-  5: 2,
+  1: 3,
+  2: 3,
+  3: 4,
 };
 
 export default function TaskRouter() {
@@ -58,7 +54,7 @@ export default function TaskRouter() {
       }}
     >
       ⏳ {formatTime(timeLeft)}<br />
-      ⭐ {score} / 10 ұпай
+      ⭐ {score} / 5 ұпай
     </div>
   );
 
@@ -70,19 +66,15 @@ export default function TaskRouter() {
       case 2:
         return <Task2 {...taskProps} />;
       case 3:
-        return <Task3 {...taskProps} />;
-      case 4:
-        return <Task4 {...taskProps} />;
-      case 5:
-        return <Task5 onSuccess={handleSuccess} score={score} />;
+        return <Task3 onSuccess={handleSuccess} score={score} />;
       default:
         return <div style={{ color: "#FFD700", padding: "2rem" }}>Тапсырма табылмады.</div>;
     }
   };
 
   const handleNext = () => {
-    if (stepNum < 5) {
-      navigate(`/grade8/while/${stepNum + 1}`);
+    if (stepNum < 3) {
+      navigate(`/grade8/else-clause/${stepNum + 1}`);
     } else {
       navigate("/grade8/topics");
     }
@@ -90,11 +82,10 @@ export default function TaskRouter() {
 
   const handlePrevious = () => {
     if (stepNum > 1) {
-      navigate(`/grade8/while/${stepNum - 1}`);
+      navigate(`/grade8/else-clause/${stepNum - 1}`);
     }
   };
 
-  // ✅ Popup ашылғанда тек соны көрсетеміз
   if (showPopup) {
     return (
       <EndPopup

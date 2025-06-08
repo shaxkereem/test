@@ -5,15 +5,13 @@ export default function Grade8Topics() {
 
   const topics = [
     { title: "🔁 While loop", path: "/grade8/while-intro" },
-    { title: "🧠 Problem solving: While loop", path: "/grade8/problem-while" },
+    { title: "🌟 While loop: Practice tasks", path: "/grade8/while-practice-intro" },
     { title: "🔂 For loop in Python", path: "/grade8/for-intro" },
-    { title: "🧩 Problem solving: For loop", path: "/grade8/problem-for" },
-    { title: "⛔ Loop control: Break & Continue", path: "/grade8/loop-break-continue" },
-    { title: "📎 Loop control: Else clause", path: "/grade8/loop-else" },
-    { title: "⚙️ Loop control: Practice", path: "/grade8/loop-practice" },
-    { title: "🧮 Problem solving: Loops in Python", path: "/grade8/problem-loops" },
-    { title: "🔍 Tracing an algorithm", path: "/grade8/tracing" },
-    { title: "✅ Check yourself", path: "/grade8/check-yourself" },
+    { title: "🧩 Problem solving: For loop", path: "/grade8/for-practice/1" },
+    { title: "⛔ Loop control: Break & Continue", path: "/grade8/break-continue" },
+    { title: "📎 Loop control: Else clause", path: "/grade8/else-clause/intro" },
+    { title: "⚙️ Loop control: Practice", path: "/grade8/practice/1" },
+    { title: "🔍 Tracing an algorithm", path: "/grade8/tracing" }
   ];
 
   return (
