@@ -58,23 +58,6 @@ export default function Task4({ onSuccess }) {
       <div style={{ marginTop: "1rem", fontSize: "1.1rem", color: isCorrect ? "#0f0" : "#f33" }}>
         {output || "📥 Нәтиже осында шығады"}
       </div>
-      <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <button
-          onClick={handleNext}
-          style={{
-            backgroundColor: isCorrect ? "#FFD700" : "#333",
-            color: isCorrect ? "#000" : "#FFD700",
-            padding: "0.75rem 1.5rem",
-            borderRadius: "10px",
-            fontWeight: "bold",
-            fontSize: "1rem",
-            border: isCorrect ? "none" : "1px dashed #FFD700",
-            cursor: "pointer"
-          }}
-        >
-          ➡️ {isCorrect ? "Келесі тапсырма" : "Өткізіп жіберу"}
-        </button>
-      </div>
     </div>
   );
 }

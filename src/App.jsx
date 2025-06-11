@@ -15,6 +15,8 @@ import BreakPracticeRouter from "./pages/tasks/break-continue/TaskRouter";
 import TaskRouter from "./pages/tasks/else-clause/TaskRouter";
 import ElseIntro from "./pages/tasks/else-clause/while-else-intro";
 import PracticeRouter from "./pages/tasks/practice/TaskRouter";
+import TracingIntro from "./pages/tasks/tracing/TracingIntro";
+import TracingRouter from "./pages/tasks/tracing/TaskRouter";
 
 
 export default function App() {
@@ -43,6 +45,11 @@ export default function App() {
       <Route path="/grade8/else-clause/:step" element={<TaskRouter />} />
 
       <Route path="/grade8/practice/:step" element={<PracticeRouter />} />
+
+      <Route path="/grade8/tracing" element={<TracingIntro />} />
+      <Route path="/grade8/tracing-intro/:step" element={<TracingRouter />} />
+
+
     </Routes>
   );
 }

@@ -1,16 +1,16 @@
 {
-  "homepage": "http://shaxkerem.github.io/my-mantine-app",
   "name": "my-mantine-app",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://shaxkereem.github.io.test",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d buildc"
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@codemirror/lang-python": "^6.1.7",
@@ -19,6 +19,7 @@
     "@uiw/codemirror-theme-dracula": "^4.23.10",
     "@uiw/react-codemirror": "^4.23.10",
     "framer-motion": "^12.7.4",
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.1"

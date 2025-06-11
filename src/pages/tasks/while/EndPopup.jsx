@@ -31,17 +31,17 @@ export default function EndPopup({ score, timeUsed, onClose }) {
           border: "2px solid #FFD700",
         }}
       >
-        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>⏹ Уақыт аяқталды!</h1>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>🎉 Құттықтаймыз!</h1>
 
         <p style={{ fontSize: "1.2rem", marginBottom: "0.5rem" }}>
-          ⏳ <strong>Қалған уақыт:</strong> {timeUsed}
+          ⏳ <strong>Өткен уақыт:</strong> {timeUsed}
         </p>
         <p style={{ fontSize: "1.2rem", marginBottom: "2rem" }}>
           ⭐ <strong>Жиналған ұпай:</strong> {score} / 10
         </p>
 
         <p style={{ fontSize: "1rem", color: "#ccc", marginBottom: "1.5rem" }}>
-          Барлық тапсырмалармен танысып болдың. Қаласаң, басқа тақырыпты таңдай аласың.
+          Барлық тапсырмаларды аяқтадың! Қаласаң, басты бетке орала аласың.
         </p>
 
         <button
@@ -57,7 +57,7 @@ export default function EndPopup({ score, timeUsed, onClose }) {
             cursor: "pointer",
           }}
         >
-          🔙 Тақырыптар тізіміне өту
+          🔙 Тақырыптар бетіне өту
         </button>
       </div>
     </div>

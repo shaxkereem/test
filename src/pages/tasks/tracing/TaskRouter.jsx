@@ -24,8 +24,8 @@ export default function TaskRouter() {
   const [score, setScore] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [manualFinish, setManualFinish] = useState(false); // Аяқтау батырмасына арналған
-  const [confirmFinish, setConfirmFinish] = useState(false); // Растау шығару
+  const [manualFinish, setManualFinish] = useState(false); // 🆕 Аяқтау батырмасына арналған
+  const [confirmFinish, setConfirmFinish] = useState(false); // 🆕 Растау шығару
   const [finalTimeUsed, setFinalTimeUsed] = useState(null);
 
   const { timeLeft, formatTime } = useTimer(manualFinish ? 0 : 1800); // Егер аяқтау басталса — уақыт тоқтатылады
@@ -85,21 +85,7 @@ export default function TaskRouter() {
   };
 
   const handleGoToStep = (step) => {
-    navigate(`/grade8/while-practice/${step}`);
-  };
-
-  const handleNext = () => {
-    if (stepNum < 5) {
-      navigate(`/grade8/while-practice/${stepNum + 1}`);
-    } else {
-      navigate("/grade8/topics");
-    }
-  };
-
-  const handlePrevious = () => {
-    if (stepNum > 1) {
-      navigate(`/grade8/while-practice/${stepNum - 1}`);
-    }
+    navigate(`/grade8/tracing-intro/${step}`);
   };
 
   const handleFinishClick = () => {
@@ -160,7 +146,6 @@ export default function TaskRouter() {
           </button>
         ))}
       </div>
-
 
       {/* Аяқтау батырмасы */}
       <div style={{ textAlign: "center", marginTop: "2rem" }}>

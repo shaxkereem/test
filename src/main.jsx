@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         primaryColor: "yellow",
       }}
     >
-      <BrowserRouter>
+      <BrowserRouter basename="/test">
         <App />
       </BrowserRouter>
     </MantineProvider>

@@ -23,6 +23,12 @@ export default function MindMaze() {
     });
   };
 
+  const resetGame = () => {
+    setPlayerPos({ x: 0, y: 0 });
+    setGoalPosition(generateRandomGoal());
+    setReachedGoal(false);
+  };
+
   useEffect(() => {
     const handleKey = (e) => {
       if (reachedGoal) return;
@@ -44,7 +50,7 @@ export default function MindMaze() {
       setReachedGoal(true);
       setTimeout(() => {
         navigate("/grade8/topics");
-      }, 2000); // 2 секундтан кейін бағыттау
+      }, 2000);
     }
   }, [playerPos, goalPosition, reachedGoal, navigate]);
 
@@ -63,14 +69,16 @@ export default function MindMaze() {
     >
       <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>🧠 Mind Maze</h1>
       <p style={{ color: "#ccc", marginBottom: "2rem" }}>
-        Сары блокты бағыттауыш пернелермен ✴️ белгісіне жеткіз.
+        Сары блокты бағыттауыш пернелермен немесе төмендегі батырмалармен ✴️ белгісіне жеткіз.
       </p>
 
+      {/* Grid */}
       <div
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${gridSize}, 3rem)`,
           gap: "6px",
+          marginBottom: "2rem",
         }}
       >
         {[...Array(gridSize * gridSize)].map((_, i) => {
@@ -100,6 +108,32 @@ export default function MindMaze() {
         })}
       </div>
 
+      {/* 4 бағыт батырмалары */}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
+        <button onClick={() => move(0, -1)} style={buttonStyle}>⬆️ Жоғары</button>
+        <div style={{ display: "flex", gap: "0.5rem" }}>
+          <button onClick={() => move(-1, 0)} style={buttonStyle}>⬅️ Солға</button>
+          <button onClick={() => move(1, 0)} style={buttonStyle}>➡️ Оңға</button>
+        </div>
+        <button onClick={() => move(0, 1)} style={buttonStyle}>⬇️ Төмен</button>
+      </div>
+
+      {/* Reset Button */}
+      <button
+        onClick={resetGame}
+        style={{
+          ...buttonStyle,
+          marginTop: "2rem",
+          backgroundColor: "#444",
+          color: "#FFD700",
+          fontSize: "1rem",
+          padding: "0.6rem 2rem",
+        }}
+      >
+        ♻️ Жаңа ойын бастау
+      </button>
+
+      {/* Goal message */}
       {reachedGoal && (
         <p style={{ color: "lime", fontWeight: "bold", marginTop: "2rem" }}>
           🎉 Мақсатқа жеттің! Бір сәттен соң тақырыптарға өтесің...
@@ -108,3 +142,15 @@ export default function MindMaze() {
     </div>
   );
 }
+
+// Button style
+const buttonStyle = {
+  backgroundColor: "#FFD700",
+  color: "#000",
+  padding: "0.75rem 2rem",
+  fontWeight: "bold",
+  fontSize: "1.2rem",
+  borderRadius: "10px",
+  border: "none",
+  cursor: "pointer",
+};
